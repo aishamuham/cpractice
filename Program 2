@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+int main () {
+
+char name[5][10];
+float hrs[5];
+float rate[5];
+float gross[5];
+float taxes[5];
+float net[5];
+float overtime[5];
+float overtaxes[5];
+float overth[5];
+
+for (int i = 0; i < 5; i++)
+{
+  printf("Enter Employee Name: ");
+  scanf_s("%s", &name [i], 10);
+  
+  printf("Enter Hourly Rate: ");
+  scanf_s("%f", &rate[i]);
+  
+  if (rate[i] == -1)
+  {
+    break;
+  }
+  
+  printf("Enter Hours Worked: ")
+  scanf_s("%f", &hrs[i]);
+  
+  if(hrs == -1)
+  {
+    break;
+  }
+  if (hrs[i] <= 40) 
+  {
+    gross[i] = hrs[i] * rate[i];
+    
+    taxes[i] = 0.2f * gross[i];
+    
+    net[i] = gross[i] - taxes[i];
+  }
+  else if (hrs[i] > 40) {
+    
+    overtime[i] = hrs[i] * rate[i] * 1.5f;
+    printf("Overtime Pay: %f\n", overtime[i]);
+    
+    overtaxes[i] = overtime[i] * 0.2f;
+    printf("Taxes Paid: %f\n, overtaxes[i]);
+    
+    overth[i] = overtime[i] - overtaxes[i];
+    print("Net Pay: %f\n", overth[i]);
+    
+    }
+}
+
+for (int i = 0; i <5; i++) {
+
+    printf("Employee Name: %s\n", name[i]);
+    
+    
+    printf("Gross Pay: %.2\n", gross[i]);
+    
+    printf("Taxes Paid: %.2f\n, taxes[i]);
+    
+    printf("Net Pay: %.2f\n", net[i]);
+    
+    
+ }
+ 
+ return 0;
+ 
+ 
+}
+    
+  
